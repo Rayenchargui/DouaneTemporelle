@@ -1,19 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_titre_ab"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Douane Temporelle"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#7719d4"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/mapolice" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/et_nom_ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom du voyageur" />
+
+    <EditText
+        android:id="@+id/et_naissance_ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Année de naissance"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/et_destination_ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Année de destination"
+        android:inputType="number" />
+    <RadioGroup
+        android:id="@+id/rg_motif_ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+        <RadioButton
+            android:id="@+id/rb_tourisme_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tourisme"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rb_modif_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modification du passé" />
+        <RadioButton
+            android:id="@+id/rb_fuite_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuite" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_inspecter_ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Inspecter le profil" />
+</LinearLayout>
