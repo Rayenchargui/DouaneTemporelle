@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
 
 
     <TextView
@@ -13,10 +16,10 @@
         android:text="Douane Temporelle"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:gravity="center"
+        android:textAlignment="center"
         android:textColor="#7719d4"
         android:layout_marginBottom="32dp"
-        android:fontFamily="@font/mapolice" />
+        android:fontFamily="cursive" />
 
     <EditText
         android:id="@+id/et_nom_ab"
@@ -46,8 +49,7 @@
             android:id="@+id/rb_tourisme_ab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tourisme"
-            android:checked="true"/>
+            android:text="Tourisme" />
         <RadioButton
             android:id="@+id/rb_modif_ab"
             android:layout_width="wrap_content"

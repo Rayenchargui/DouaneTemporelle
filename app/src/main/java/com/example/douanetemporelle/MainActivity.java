@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText etNom;
     private EditText etNaiss;
     private EditText etDest;
-    private RadioGroup rgMotif;
+    private RadioButton rbMotif1;
+    private RadioButton rbMotif2;
+    private RadioButton rbMotif3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
         etNom = findViewById(R.id.et_nom_ab);
         etNaiss = findViewById(R.id.et_naissance_ab);
         etDest = findViewById(R.id.et_destination_ab);
-        rgMotif = findViewById(R.id.rg_motif_ab);
+        rbMotif1 = findViewById(R.id.rb_motif1_ab);
+        rbMotif2 = findViewById(R.id.rb_motif2_ab);
+        rbMotif3 = findViewById(R.id.rb_motif3_ab);
     }
 
     // Méthode ki tenzel 3ala "Inspecter Profil"
     public void inspecterProfil(View v) {
         // Récupération des informations
-        String chNom = etNom.getText().toString().trim();
-        String chNaiss = etNaiss.getText().toString().trim();
-        String chDest = etDest.getText().toString().trim();
+        String chNom = etNom.getText().toString();
+        String chNaiss = etNaiss.getText().toString();
+        String chDest = etDest.getText().toString();
 
         // Tthabet est ce que vide wala le
         if (chNom.isEmpty() || chNaiss.isEmpty() || chDest.isEmpty()) {
@@ -57,17 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
 
-            int naiss;
-            int dest;
-
-            try {
-                naiss = Integer.parseInt(chNaiss);
-                dest = Integer.parseInt(chDest);
-            } catch (NumberFormatException e) {
-                etNaiss.setError("Année invalide");
-                etDest.setError("Année invalide");
-                return;
-            }
+            int naiss = Integer.parseInt(chNaiss);
+            int dest = Integer.parseInt(chDest);
 
             // el naissance max 2024 w destination awka ihot li i7eb
             if (naiss <= 0 || naiss > 2024) {
@@ -76,27 +71,36 @@ public class MainActivity extends AppCompatActivity {
                 etDest.setError("Année invalide");
             } else {
 
-                int selectedId = rgMotif.getCheckedRadioButtonId();
+                String motif = null;
 
-                if (selectedId == -1) {
-                    return;
+                if (rbMotif1.isChecked()) {
+                    motif = rbMotif1.getText().toString();
+                } else if (rbMotif2.isChecked()) {
+                    motif = rbMotif2.getText().toString();
+                } else if (rbMotif3.isChecked()) {
+                    motif = rbMotif3.getText().toString();
                 }
 
-                RadioButton rbSelected = findViewById(selectedId);
-                String motif = rbSelected.getText().toString();
+                if (motif == null) {
+                    Toast.makeText(this,
+                            "Veuillez choisir un motif",
+                            Toast.LENGTH_LONG).show();
+                } else {
 
-                Intent i = new Intent(MainActivity.this, VerificationActivity.class);
+                    Intent i = new Intent(MainActivity.this, VerificationActivity.class);
 
-                // Matricule mte3na
-                String matricule = "7982";
+                    // Matricule mte3na
+                    String matricule = "7982";
 
-                // Génération automatique des clés avec la classe Utils
-                i.putExtra(Utils.genererCle(matricule, "NOM"), chNom);
-                i.putExtra(Utils.genererCle(matricule, "NAISSANCE"), naiss);
-                i.putExtra(Utils.genererCle(matricule, "DESTINATION"), dest);
-                i.putExtra(Utils.genererCle(matricule, "MOTIF"), motif);
+                    // Génération automatique des clés avec la classe Utils
+                    i.putExtra(Utils.genererCle(matricule, "NOM"), chNom);
+                    i.putExtra(Utils.genererCle(matricule, "NAISSANCE"), naiss);
+                    i.putExtra(Utils.genererCle(matricule, "DESTINATION"), dest);
+                    i.putExtra(Utils.genererCle(matricule, "MOTIF"), motif);
 
-                startActivity(i);
+                    startActivity(i);
+                    finish();
+                }
             }
         }
     }

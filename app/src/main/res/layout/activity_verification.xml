@@ -28,7 +28,8 @@
             android:id="@+id/tv_titre_rl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="\nPROFIL VOYAGEUR"
+            android:layout_marginTop="16dp"
+            android:text="PROFIL VOYAGEUR"
             android:fontFamily="sans-serif-smallcaps"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -51,9 +52,11 @@
                 android:orientation="horizontal">
                 <!-- La largeur reste en dp, le texte passe en sp -->
                 <TextView
+                    android:id="@+id/tv_label_nom_rl"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="   NOM :"
+                    android:paddingLeft="16dp"
+                    android:text="NOM :"
                     android:fontFamily="sans-serif-smallcaps"
                     android:textColor="#FF0000"
                     android:textSize="20sp"
@@ -62,23 +65,24 @@
                     android:id="@+id/tv_nom_rl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="..."
+                    android:text="....."
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="\n" />
-
             <!--  AGE -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/tv_label_age_rl"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="   AGE :"
+                    android:paddingLeft="16dp"
+                    android:text="AGE :"
                     android:fontFamily="sans-serif-smallcaps"
                     android:textColor="#FF0000"
                     android:textSize="20sp"
@@ -87,23 +91,24 @@
                     android:id="@+id/tv_age_rl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="..."
+                    android:text="....."
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="\n" />
-
             <!--  MOTIF -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/tv_label_motif_rl"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="   MOTIF :"
+                    android:paddingLeft="16dp"
+                    android:text="MOTIF :"
                     android:fontFamily="sans-serif-smallcaps"
                     android:textColor="#FF0000"
                     android:textSize="19sp"
@@ -112,7 +117,7 @@
                     android:id="@+id/tv_motif_rl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="..."
+                    android:text="....."
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -131,31 +136,30 @@
                 android:id="@+id/btn_approuver_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="APPROUVER"
+                android:text="Approuver le saut temporel"
                 android:textColor="#FFFFFF"
                 android:background="@color/bouton_vert"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="approuver" />
 
             <!-- TextView bech na3mel espace entre les boutons-->
             <TextView
+                android:id="@+id/tv_espace_rl"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:text="" />
 
+            <!-- Espace vide ta7t refuser -->
             <Button
                 android:id="@+id/btn_refuser_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REFUSER"
+                android:layout_marginBottom="24dp"
+                android:text="Refuser (Risque de paradoxe)"
                 android:textColor="#FFFFFF"
                 android:background="@color/bouton_rouge"
-                android:textStyle="bold" />
-
-            <!-- Espace vide ta7t refuser -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="\n" />
+                android:textStyle="bold"
+                android:onClick="refuser" />
         </LinearLayout>
 
     </RelativeLayout>

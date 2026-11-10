@@ -50,12 +50,12 @@ public class VerificationActivity extends AppCompatActivity {
         // Calcul de l'âge temporel
         int ageTemporel = destRecue - naissRecue;
 
-        // nafichiw l informations mta3 voyageurs sur l'ecran
+        // twari information des voyageurs sur l'ecran
         tvNomVerif.setText(nomRecu);
         tvAgeVerif.setText("" + ageTemporel);
         tvMotifVerif.setText(motifRecu);
 
-        // Respect de la contrainte 3 (Désactivation si motif et nombre premier)
+        // Respect de la contrainte 3
         if (motifRecu != null && motifRecu.equals("Modification du passé") && estPremier(ageTemporel)) {
             btnApprouver.setEnabled(false);
         }
@@ -76,7 +76,7 @@ public class VerificationActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    // Algorithme   pour le test du nombre premier
+    // Algorithme    pour le test du nombre premier
     private boolean estPremier(int n) {
         if (n <= 1) return false;
         for (int i = 2; i < n; i++) {
