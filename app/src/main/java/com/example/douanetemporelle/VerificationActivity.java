@@ -1,11 +1,14 @@
 package com.example.douanetemporelle;
 
+// hethom les imports .toast zedtha lel toast . make text
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class VerificationActivity extends AppCompatActivity {
 
@@ -15,6 +18,7 @@ public class VerificationActivity extends AppCompatActivity {
     private TextView tvMotifVerif;
     private Button btnApprouver;
     private Button btnRefuser;
+
 
     // Lezem ykoun l matricule nafssou fl MainActivity
     private String matricule = "7982";
@@ -55,9 +59,16 @@ public class VerificationActivity extends AppCompatActivity {
         tvAgeVerif.setText("" + ageTemporel);
         tvMotifVerif.setText(motifRecu);
 
+
         // contrainte 3 : ken l motif "Modification du passé" w l far9 3adad awwali, l bouton Approuver yet3attal
+
+        // bech nzid notifiation men 3andi twari el user 3leh el bouton approuver mayet3adech
         if (motifRecu != null && motifRecu.equals("Modification du passé") && estPremier(ageTemporel)) {
             btnApprouver.setEnabled(false);
+            // nwarriw l user 3lech l bouton Approuver m3attal
+            Toast.makeText(this,
+                    "Risque de paradoxe : approbation impossible",
+                    Toast.LENGTH_LONG).show();
         }
     }
 
