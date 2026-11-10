@@ -1,7 +1,7 @@
 package com.example.douanetemporelle;
 
 
-// LES IMPORTS
+// l imports
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Déclaration des variables
+    // ndeclariw les variables
     private EditText etNom;
     private EditText etNaiss;
     private EditText etDest;
@@ -28,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Liaison des variables avec le XML
+        // nrabtou les variables m3a l XML
         etNom = findViewById(R.id.et_nom_ab);
         etNaiss = findViewById(R.id.et_naissance_ab);
         etDest = findViewById(R.id.et_destination_ab);
-        rbMotif1 = findViewById(R.id.rb_motif1_ab);
-        rbMotif2 = findViewById(R.id.rb_motif2_ab);
-        rbMotif3 = findViewById(R.id.rb_motif3_ab);
+        rbMotif1 = findViewById(R.id.rb_tourisme_ab);
+        rbMotif2 = findViewById(R.id.rb_modif_ab);
+        rbMotif3 = findViewById(R.id.rb_fuite_ab);
     }
 
     // Méthode ki tenzel 3ala "Inspecter Profil"
     public void inspecterProfil(View v) {
-        // Récupération des informations
+        // n5thou l ma3loumet mel champs
         String chNom = etNom.getText().toString();
         String chNaiss = etNaiss.getText().toString();
         String chDest = etDest.getText().toString();
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     // Matricule mte3na
                     String matricule = "7982";
 
-                    // Génération automatique des clés avec la classe Utils
+                    // nsn3ou l cles bel methode static mta3 Utils
                     i.putExtra(Utils.genererCle(matricule, "NOM"), chNom);
                     i.putExtra(Utils.genererCle(matricule, "NAISSANCE"), naiss);
                     i.putExtra(Utils.genererCle(matricule, "DESTINATION"), dest);

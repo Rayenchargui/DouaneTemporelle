@@ -47,7 +47,7 @@ public class VerificationActivity extends AppCompatActivity {
 
         String motifRecu = intent.getStringExtra(Utils.genererCle(matricule, "MOTIF"));
 
-        // Calcul de l'âge temporel
+        // n7sbou l 3omr zamani (l far9 bin sanet l wasl w sanet l miled)
         int ageTemporel = destRecue - naissRecue;
 
         // twari information des voyageurs sur l'ecran
@@ -55,18 +55,19 @@ public class VerificationActivity extends AppCompatActivity {
         tvAgeVerif.setText("" + ageTemporel);
         tvMotifVerif.setText(motifRecu);
 
-        // Respect de la contrainte 3
+        // contrainte 3 : ken l motif "Modification du passé" w l far9 3adad awwali, l bouton Approuver yet3attal
         if (motifRecu != null && motifRecu.equals("Modification du passé") && estPremier(ageTemporel)) {
             btnApprouver.setEnabled(false);
         }
     }
 
-    // Utilisation de setOnClickListener
+    // hedhi l methode eli tet3ayat 3liha mel XML b android:onClick
     public void approuver(View v) {
         Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
         i.putExtra(Utils.genererCle(matricule, "DECISION"), true);
         i.putExtra(Utils.genererCle(matricule, "NOM"), nomRecu);
         startActivity(i);
+        finish();
     }
 
     public void refuser(View v) {
@@ -74,9 +75,10 @@ public class VerificationActivity extends AppCompatActivity {
         i.putExtra(Utils.genererCle(matricule, "DECISION"), false);
         i.putExtra(Utils.genererCle(matricule, "NOM"), nomRecu);
         startActivity(i);
+        finish();
     }
 
-    // Algorithme    pour le test du nombre premier
+    // algorithme lel test mta3 l 3adad l awwali
     private boolean estPremier(int n) {
         if (n <= 1) return false;
         for (int i = 2; i < n; i++) {
