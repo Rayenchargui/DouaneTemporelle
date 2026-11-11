@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- RACINE : LinearLayout horizontal -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,104 +23,140 @@
         android:layout_weight="0.7"
         android:background="#121212">
 
-        <!--titre-->
-        <TextView
-            android:id="@+id/tv_titre_rl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="PROFIL VOYAGEUR"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <!--  vertical  -->
+        <!--  vertical (titre + billet)  -->
         <LinearLayout
-            android:id="@+id/ll_donnees_rl"
+            android:id="@+id/ll_haut_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_centerVertical="true">
+            android:layout_alignParentTop="true">
 
-            <!--  NOM -->
-            <LinearLayout
+            <!--titre-->
+            <TextView
+                android:id="@+id/tv_titre_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_label_nom_rl"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:text="NOM :"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:textColor="#FF0000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_nom_rl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="....."
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:layout_marginTop="48dp"
+                android:text="PASSEPORT TEMPOREL"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <!--  AGE -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_sous_titre_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="DOUANE TEMPORELLE"
+                android:textAlignment="center"
+                android:textColor="#E53935"
+                android:textSize="12sp" />
+
+            <!--  vertical  -->
+            <LinearLayout
+                android:id="@+id/ll_donnees_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="24dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_label_age_rl"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:text="AGE :"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:textColor="#FF0000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_age_rl"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_rouge">
+
+                <!--  NOM -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="....."
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <TextView
+                        android:id="@+id/tv_label_nom_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NOM"
+                        android:textColor="#E53935"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_nom_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="....."
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_ligne1_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#444444"
+                    android:text="" />
+
+                <!--  AGE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <TextView
+                        android:id="@+id/tv_label_age_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ÂGE TEMPOREL"
+                        android:textColor="#E53935"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_age_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="....."
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_ligne2_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#444444"
+                    android:text="" />
+
+                <!--  MOTIF -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <TextView
+                        android:id="@+id/tv_label_motif_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MOTIF"
+                        android:textColor="#E53935"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_motif_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="....."
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!--  MOTIF -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_label_motif_rl"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:text="MOTIF :"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:textColor="#FF0000"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_motif_rl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="....."
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
         </LinearLayout>
 
         <!--  BOUTONS -->
@@ -127,6 +164,8 @@
             android:id="@+id/ll_boutons_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             android:orientation="vertical"
             android:layout_alignParentBottom="true">
 
@@ -152,7 +191,7 @@
                 android:id="@+id/btn_refuser_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="64dp"
                 android:text="Refuser (Risque de paradoxe)"
                 android:textColor="#FFFFFF"
                 android:background="@color/bouton_rouge"

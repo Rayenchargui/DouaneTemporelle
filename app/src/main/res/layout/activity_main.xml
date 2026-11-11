@@ -3,71 +3,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
+    android:background="#0D0D0D"
+    android:paddingLeft="20dp"
+    android:paddingTop="48dp"
+    android:paddingRight="20dp"
     android:paddingBottom="16dp">
-
 
     <TextView
         android:id="@+id/tv_titre_ab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Douane Temporelle"
-        android:textSize="50sp"
+        android:text="DOUANE TEMPORELLE"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="#7719d4"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="cursive" />
+        android:textColor="#E53935" />
 
-    <EditText
-        android:id="@+id/et_nom_ab"
+    <TextView
+        android:id="@+id/tv_sous_titre_ab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nom du voyageur" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Poste de contrôle des voyageurs du temps"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textColor="#AAAAAA" />
 
-    <EditText
-        android:id="@+id/et_naissance_ab"
+    <LinearLayout
+        android:id="@+id/ll_cadre_ab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Année de naissance"
-        android:inputType="number" />
+        android:orientation="vertical"
+        android:background="@drawable/border_rouge"
+        android:paddingLeft="14dp"
+        android:paddingTop="14dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="10dp">
 
-    <EditText
-        android:id="@+id/et_destination_ab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Année de destination"
-        android:inputType="number" />
-    <RadioGroup
-        android:id="@+id/rg_motif_ab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-        <RadioButton
-            android:id="@+id/rb_tourisme_ab"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_nom_ab"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tourisme" />
-        <RadioButton
-            android:id="@+id/rb_modif_ab"
-            android:layout_width="wrap_content"
+            android:background="@drawable/border_champ"
+            android:paddingLeft="12dp"
+            android:hint="Nom du voyageur"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888" />
+
+        <EditText
+            android:id="@+id/et_naissance_ab"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Modification du passé" />
-        <RadioButton
-            android:id="@+id/rb_fuite_ab"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_champ"
+            android:paddingLeft="12dp"
+            android:hint="Année de naissance"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888" />
+
+        <EditText
+            android:id="@+id/et_destination_ab"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fuite" />
-    </RadioGroup>
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_champ"
+            android:paddingLeft="12dp"
+            android:hint="Année de destination"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888" />
+
+        <TextView
+            android:id="@+id/tv_label_motif_ab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="MOTIF DU VOYAGE"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#E53935" />
+
+        <RadioGroup
+            android:id="@+id/rg_motif_ab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <RadioButton
+                android:id="@+id/rb_tourisme_ab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tourisme"
+                android:textColor="#FFFFFF" />
+            <RadioButton
+                android:id="@+id/rb_modif_ab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modification du passé"
+                android:textColor="#FFFFFF" />
+            <RadioButton
+                android:id="@+id/rb_fuite_ab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fuite"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_inspecter_ab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="#B31616"
         android:text="Inspecter le profil"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:onClick="inspecterProfil" />
+
 
 
 </LinearLayout>

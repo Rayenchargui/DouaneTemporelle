@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         rbMotif3 = findViewById(R.id.rb_fuite_ab);
     }
 
+
+
     // Méthode ki tenzel 3ala "Inspecter Profil"
     public void inspecterProfil(View v) {
         // n5thou l ma3loumet mel champs
@@ -103,5 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+
     }
 }
